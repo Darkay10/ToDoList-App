@@ -1,22 +1,30 @@
 SISTEMAS DE GESTION EMPRESARIAL
 
 			Application Inspector
-Jose Giner PÈrez & HÈctor Cantos Blasco & Sergio BernabÈ AliÛ
-Nuestro trabajo a lo largo de esta pr·ctica se basa en el estudio de las salidas, an·lisis de los archivos JSON y eliminar rastros de Microsoft 
-A lo largo de la b˙squeda encontramos una carpeta llamada Writers que contiene informaciÛn que escribe en formato JSON
-JsonWriter es una clase que se base en cuando el usuario selecciona en los checkbox para elegir que tipo de an·lisis desea(de los servicios, puertos, certificados o de todo el almacenamiento)
+Jose Giner P√©rez & H√©ctor Cantos Blasco & Sergio Bernab√© Ali√≥
+Nuestro trabajo a lo largo de esta pr√°ctica se basa en el estudio de las salidas, 
+an√°lisis de los archivos JSON y eliminar rastros de Microsoft. 
+A lo largo de la b√∫squeda encontramos una carpeta llamada Writers que contiene informaci√≥n que escribe en formato JSON
+JsonWriter es una clase que se base en cuando el usuario selecciona en los checkbox para elegir que tipo de an√°lisis 
+desea(de los servicios, puertos, certificados o de todo el almacenamiento)
 LiquidWriter registra tipos de datos con un framework de html liquid y configura los datos para su uso como recursos.
-La carpeta	Webfonts contiene todo lo necesario para los iconos y sprites presentes en la aplicaciÛn	
+La carpeta Webfonts contiene todo lo necesario para los iconos y sprites presentes en la aplicaci√≥n	
 SALIDA DEL PROGRAMA
 En la carpeta Writers, LiquidWriter.cs es quien se encarga de generar el reporte en HTML.
 Esto lo podemos deducir gracias al encabezado de comentario que reza: 
-ìRegisters datatypes with html framework liquid and sets up data for use within it and used with html partial.liquid files that are embedded as resourcesî
-Que traducido al espaÒol serÌa:
-ìRegistra los datatypes con el framework html liquid y prepara los datos para su uso con ficheros partial.liquid que est·n embebidos como recursos.î
-En la lÌnea 71 tambien podemos observar que un comentario nos dice que de todos modos, se genera un reporte json por conveniencia, ya que el usuario podrÌa querer exportar estos resultados en formato json para trabajar con ellos, algo que harÌa pulsando un botÛn en la interfaz web.
-El comentario en cuestiÛn:
-ìwrites out json report for convenience and linking to from report page(s)î
+‚ÄúRegisters datatypes with html framework liquid and sets up data for use within it and used with html partial.liquid files 
+that are embedded as resources‚Äù
+Que traducido al espa√±ol ser√≠a:
+‚ÄúRegistra los datatypes con el framework html liquid y prepara los datos para su uso con ficheros partial.liquid que est√°n 
+embebidos como recursos.‚Äù
+En la l√≠nea 71 tambien podemos observar que un comentario nos dice que de todos modos, se genera un reporte json por conveniencia, ya que 
+el usuario podr√≠a querer exportar estos resultados en formato json para trabajar con ellos, 
+algo que har√≠a pulsando un bot√≥n en la interfaz web.
+El comentario en cuesti√≥n:
+‚Äúwrites out json report for convenience and linking to from report page(s)‚Äù
 ELIMINACION DE LA PUBLICIDAD MICROSOFT
-De las lÌneas 68 a la 70 podemos empezar a tirar del hilo para llegar hasta donde tenemos que modificar los archivos, ya que estas dan las instrucciones de generaciÛn del archivo ìoutput.htmlî, a la par que tambiÈn nos dice como construye la variable que se va a usar como contenido de la misma web, haciendo referencia a cosas como una funciÛn template html, entre otros.
+De las l√≠neas 68 a la 70 podemos empezar a tirar del hilo para llegar hasta donde tenemos que modificar los archivos, 
+ya que estas dan las instrucciones de generaci√≥n del archivo ‚Äúoutput.html‚Äù, a la par que tambi√©n nos dice como construye 
+la variable que se va a usar como contenido de la misma web, haciendo referencia a cosas como una funci√≥n template html, entre otros.
 
 
