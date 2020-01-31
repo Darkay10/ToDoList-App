@@ -7,6 +7,16 @@ A lo largo de la búsqueda encontramos una carpeta llamada Writers que contiene i
 JsonWriter es una clase que se base en cuando el usuario selecciona en los checkbox para elegir que tipo de análisis desea(de los servicios, puertos, certificados o de todo el almacenamiento)
 LiquidWriter registra tipos de datos con un framework de html liquid y configura los datos para su uso como recursos.
 La carpeta	Webfonts contiene todo lo necesario para los iconos y sprites presentes en la aplicación	
-
+SALIDA DEL PROGRAMA
+En la carpeta Writers, LiquidWriter.cs es quien se encarga de generar el reporte en HTML.
+Esto lo podemos deducir gracias al encabezado de comentario que reza: 
+“Registers datatypes with html framework liquid and sets up data for use within it and used with html partial.liquid files that are embedded as resources”
+Que traducido al español sería:
+“Registra los datatypes con el framework html liquid y prepara los datos para su uso con ficheros partial.liquid que están embebidos como recursos.”
+En la línea 71 tambien podemos observar que un comentario nos dice que de todos modos, se genera un reporte json por conveniencia, ya que el usuario podría querer exportar estos resultados en formato json para trabajar con ellos, algo que haría pulsando un botón en la interfaz web.
+El comentario en cuestión:
+“writes out json report for convenience and linking to from report page(s)”
+ELIMINACION DE LA PUBLICIDAD MICROSOFT
+De las líneas 68 a la 70 podemos empezar a tirar del hilo para llegar hasta donde tenemos que modificar los archivos, ya que estas dan las instrucciones de generación del archivo “output.html”, a la par que también nos dice como construye la variable que se va a usar como contenido de la misma web, haciendo referencia a cosas como una función template html, entre otros.
 
 
