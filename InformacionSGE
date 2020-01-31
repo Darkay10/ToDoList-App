@@ -1,1 +1,10 @@
-AQUI ES DONDE HACEMOS EL FICHERO
+SISTEMAS DE GESTION EMPRESARIAL
+
+			Application Inspector
+Jose Giner Pérez & Héctor Cantos Blasco & Sergio Bernabé Alió
+Nuestro trabajo a lo largo de esta práctica se basa en el estudio de las salidas, análisis de los archivos JSON y eliminar rastros de Microsoft 
+A lo largo de la búsqueda encontramos una carpeta llamada Writers que contiene información que escribe en formato JSON
+JsonWriter es una clase que se base en cuando el usuario selecciona en los checkbox para elegir que tipo de análisis desea(de los servicios, puertos, certificados o de todo el almacenamiento)
+LiquidWriter registra tipos de datos con un framework de html liquid y configura los datos para su uso como recursos		
+
+
