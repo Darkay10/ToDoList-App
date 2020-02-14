@@ -1,57 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Todo App</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://kit.fontawesome.com/2a4d50586d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <title>Lista de tareas</title>
 </head>
-<body>
-    <div class="container">
-    <div class="row">
-        <div class="col-sm-12" id="inicio">
-            <h1>Lista de tareas</h1>
+
+<body style="background: #D88E53">
+    <div class="row m-3">
+        <div class="col-md-3 card p-3 m-3" style="width: 20rem; background: #FFFFFF">
+            <h3>Lista de tareas</h3>
+            <form action="{{ url_for('add') }}" method="POST">
+                <h4>Agregar tarea</h4>
+                <input type="text" name="todoitem" class="form-control" required>
+                <br />
+                <input type="submit" value="Agregar" class="btn btn-primary">
+            </form>
         </div>
-        <div class="col-sm-3" id="vacio1">
-        
-        </div>
-        <div class="col-sm-6" id="agregar">       
-            <form action="{{ url_for('add') }}" method="POST" class="box">
-                <h2>Agregar nuevo item</h2>
-                <input type="text" name="todoitem">
-                <input type="submit" value="Agregar">
-            </form> 
-        </div>
-        <div class="col-sm-3" id="vacio1">
-        
-        </div>
-        <div class="col-sm-3" id="vacio1">
-        
-        </div>
-        <div class="col-sm-6" id="lista">
-            
-            <h1 style="text-align: center;">Tareas incompletas</h1>
-            <ul>
+        <div class="col-md-4 card p-3 m-3" style="width: 20rem;text-align: center; background: #FFFFFF">
+            <h3>Tareas sin terminar</h3>
+            <ul class="list-group">
                 {% for todo in incomplete %}
-                <li style="font-size: 30pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">Tarea Completada</a></li>
-                {% endfor %}    
-            </ul>
-            <h2>Completed Items</h2>
-            <ul>
-                {% for todo in complete %}
-                <li style="font-size: 30pt">{{ todo.text }}</li>
+                <li class="list-group-item"><span style="font-size: 23px;">{{ todo.text }}</span>
+                    <a style="color: white;" href="{{ url_for('complete', id=todo.id) }}"><button type="button" class="btn btn-success">
+                            <i class="fas fa-check"></i>
+                        </button></a>
+                    <a style="color: white;" href="{{ url_for('delete', id=todo.id) }}"><button type="button" class="btn btn-danger">
+                            <i class="fas fa-trash"></i>
+                        </button></a>
+                </li>
                 {% endfor %}
             </ul>
-            
         </div>
-        <div class="col-sm-3" id="vacio1">
-        
-        </div>
-        <div class="col-sm-12" id="vacio1">
-        
+        <div class="col-md-4 card p-3 m-3" style="width: 20rem; text-align: center; background: #FFFFFF">
+            <h3>Tareas terminadas</h3>
+            <ul>
+                {% for todo in complete %}
+                <li class="list-group-item"><span style="font-size: 23px;">{{ todo.text }}</span>
+                    <a style="color: white;" href="{{ url_for('incomplete', id=todo.id) }}"><button type="button" class="btn btn-warning">
+                            <i class="fas fa-undo-alt"></i>
+                        </button></a>
+                </li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
-</div>
-    
-    
-    
+    <!-- style="text-align: center;" -->
 </body>
+
 </html>

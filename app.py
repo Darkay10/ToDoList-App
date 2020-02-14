@@ -27,11 +27,29 @@ def add():
 
     return redirect(url_for('index'))
 
+
+@app.route('/delete/<id>')
+def delete(id):
+    Todo.query.filter(Todo.id == int(id)).delete()
+    
+    #todo = Todo.query.filter(id=int(id)).one()
+    #db.session.delete(todo)
+    db.session.commit()
+    
+    return redirect(url_for('index'))
+
 @app.route('/complete/<id>')
 def complete(id):
-
     todo = Todo.query.filter_by(id=int(id)).first()
     todo.complete = True
+    db.session.commit()
+    
+    return redirect(url_for('index'))
+
+@app.route('/incomplete/<id>')
+def incomplete(id):
+    todo = Todo.query.filter_by(id=int(id)).first()
+    todo.complete = False
     db.session.commit()
     
     return redirect(url_for('index'))
