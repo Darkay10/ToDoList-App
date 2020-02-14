@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Todo App</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -29,7 +28,7 @@
         </div>
         <div class="col-sm-6" id="lista">
             
-            <h1>Tareas incompletas</h1>
+            <h1 style="text-align: center;">Tareas incompletas</h1>
             <ul>
                 {% for todo in incomplete %}
                 <li style="font-size: 30pt">{{ todo.text }} <a href="{{ url_for('complete', id=todo.id) }}">Tarea Completada</a></li>
